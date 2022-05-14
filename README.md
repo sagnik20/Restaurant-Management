@@ -69,7 +69,7 @@ To-Do list:
   - Push the changes in your local repository to GitHub.
     - git push origin `<selected branch>`
   - use git clone to clone your repository to local machine
-    - git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+    - git clone https://github.com/YOUR-USERNAME/Restaurant-Management
 
 ## Usage
   - open website and login based on role
