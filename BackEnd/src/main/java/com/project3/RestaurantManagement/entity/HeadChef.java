@@ -6,16 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.project3.RestaurantManagement.entityInterface.EntityInterface;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
-@NoArgsConstructor
-@RequiredArgsConstructor
 public class HeadChef implements EntityInterface {
 	
 	@Id
