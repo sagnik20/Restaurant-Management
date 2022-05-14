@@ -3,7 +3,8 @@
  */
 package com.project3.RestaurantManagement.service;
 
-import com.project3.RestaurantManagement.entityInterface.EntityInterface;
+import com.project3.RestaurantManagement.dto.LoginHelper;
+import com.project3.RestaurantManagement.entity.EntityInterface;
 
 /**
  * @author evevryone
@@ -11,5 +12,5 @@ import com.project3.RestaurantManagement.entityInterface.EntityInterface;
  */
 public interface RestaurantServiceInf {
 
-	public EntityInterface LoginService();
+	public EntityInterface LoginService(LoginHelper loginHelp);
 }

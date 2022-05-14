@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.project3.RestaurantManagement.entityInterface;
+package com.project3.RestaurantManagement.entity;
 
 /**
  * @author sagnik
