@@ -17,7 +17,8 @@ import com.project3.RestaurantManagement.entity.HeadChef;
 import com.project3.RestaurantManagement.entity.Supervisor;
 
 /**
- * @author sagnik
+ * @author Sagnik 
+ * @author Venkatesh
  *
  */
 
@@ -80,15 +81,7 @@ public class RestaurantService implements RestaurantServiceInf {
 		List<HeadChef> chefs = hdao.findAll();
 		return chefs;
 	}
-	//Saving  chef
-	public boolean saveChef(HeadChef chef) {
-		HeadChefDao hc = (HeadChefDao) hdao.save(chef);
-		if (hc != null) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+	
 	//Deleting  chef
 	public boolean deleteChef(Integer cId) {
 		hdao.deleteById(cId);
@@ -113,32 +106,14 @@ public class RestaurantService implements RestaurantServiceInf {
 		List<Supervisor> supervisors = sdao.findAll();
 		return supervisors;
 	}
-
-	//saving supervisor
-	public boolean saveSupervisor(Supervisor supervisor) {
-		Supervisor superVisor = sdao.save(supervisor);
-		if (superVisor != null) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 	
 	//deleting supervisor
 	public boolean deleteSupervisor(Integer sId) {
 		sdao.deleteById(sId);
 		return true;
 	}
-	@Override
-	public boolean deleteSupervisor(String semail) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
-	public boolean deleteChef(String cid) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
+	
 	
 	
 	

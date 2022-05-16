@@ -1,36 +1,44 @@
+/**
+ * 
+ */
 package com.project3.RestaurantManagement.entity;
 
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import lombok.Data;
 
 /**
+ * @author Sagnik 
  * @author Venkatesh
  *
  */
 
 @Data
 @Entity
-public class Supervisor implements EntityInterface{
+public class Item {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int sId;
-	
-	
-	@Column(nullable = false)
-	private String sEmail;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer iId;
 	
 	@Column(nullable = false)
-	private String sPassword;
-	
+	private String iName;
 	@Column(nullable = false)
-	private String sName;
-	
+	private String iDesc;
 	@Column(nullable = false)
-	private String sPhone;
+	private String iCost;
+	@Column(nullable = false)
+	private int icount;
+	
+//	@Lob
+//	private byte[] picByte;
+//	
+//	private String iftype;
+//	private String ift;
+
 	
 }

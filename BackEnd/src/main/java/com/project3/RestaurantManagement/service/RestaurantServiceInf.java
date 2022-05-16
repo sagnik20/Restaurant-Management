@@ -11,26 +11,20 @@ import com.project3.RestaurantManagement.entity.HeadChef;
 import com.project3.RestaurantManagement.entity.Supervisor;
 
 /**
- * @author evevryone
+ * @author Sagnik 
+ * @author Venkatesh
  *
  */
 public interface RestaurantServiceInf {
 
 	public EntityInterface LoginService(LoginHelper loginHelp);
-	
 
-
-	
-
-
-	public boolean deleteSupervisor(String semail);
-	public boolean saveSupervisor(Supervisor supervisor);
+	public boolean deleteSupervisor(Integer sId);
 	public List<Supervisor> getSupervisors();
 	public boolean addSupervisor(Supervisor supervisor);
 
 
 	public boolean addChef(HeadChef chef);
 	public List<HeadChef> getChef();
-	public boolean saveChef(HeadChef chef);
-	public boolean deleteChef(String cid);
+	public boolean deleteChef(Integer cId);
 }

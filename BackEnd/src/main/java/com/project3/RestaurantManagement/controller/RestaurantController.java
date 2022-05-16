@@ -34,17 +34,17 @@ public class RestaurantController {
 	}
 	//HeadChef Login
 	@RequestMapping(path="/HeadCheflogin")
-	public HeadChef KitchenMasterLogin(@RequestBody LoginHelper loginHelper) {
-		System.out.println(loginHelper);
+	public HeadChef ChefLogin(@RequestBody LoginHelper loginHelper) {
+//		System.out.println(loginHelper);
 
-		HeadChef kitchenmaster=(HeadChef)service.LoginService(loginHelper);
-		return kitchenmaster;
+		HeadChef chef=(HeadChef)service.LoginService(loginHelper);
+		return chef;
 		
 	}
 	//Supervisor Login
 	@RequestMapping(path="/supervisorlogin")
 	public Supervisor SupervisorLogin(@RequestBody LoginHelper loginHelper) {
-		System.out.println(loginHelper);
+//		System.out.println(loginHelper);
 
 		Supervisor supervisor=(Supervisor)service.LoginService(loginHelper);
 		return supervisor;
@@ -54,7 +54,7 @@ public class RestaurantController {
 	//Adding New Chef
 	@RequestMapping(path = "/addChef")
 	
-	public String addHeadChef(@RequestBody HeadChef chef) {
+	public String addChef(@RequestBody HeadChef chef) {
 		boolean flag=service.addChef(chef);
 		if(flag){
 			return "Chef Added Successfully";
@@ -67,19 +67,10 @@ public class RestaurantController {
 	public List<HeadChef> getHeadChef(){
 		return service.getChef();
 	}
-	//Saving Chef Details
-	@RequestMapping(path = "saveChef")
-	public String saveChef(@RequestBody HeadChef chef) {
-		boolean flag=service.saveChef(chef);
-		if(flag) {
-			return "Chef Details Updated Successfully";
-		}else {
-			return "An error occured while saving the chef details";
-		}
-	}
+	
 	//deleting chef
 	@RequestMapping(path="deleteChef")
-	public String deleteChef(@RequestBody String cId) {
+	public String deleteChef(@RequestBody Integer cId) {
 		boolean flag=service.deleteChef(cId);
 		if(flag) {
 			return "Chef details deleted successfully";
@@ -104,21 +95,12 @@ public class RestaurantController {
 	public List<Supervisor> getSuperviors(){
 		return service.getSupervisors();
 	}
-	//Saving Supervisor details
-	@RequestMapping(path = "saveSupervisor")
-	public String saveSupervisor(@RequestBody Supervisor supervisor) {
-		boolean flag=service.saveSupervisor(supervisor);
-		if(flag){
-			return "Supervisor saved Successfully";
-		}else {
-			return "An error occured while saving the supervisor details";
-		}
-	}
+	
 	
 	//Deleting Supervisor
 	@RequestMapping(path = "deleteSupervisor")
-	public String deleteSupervisor(@RequestBody String semail) {
-		boolean flag=service.deleteSupervisor(semail);
+	public String deleteSupervisor(@RequestBody Integer sId) {
+		boolean flag=service.deleteSupervisor(sId);
 		if(flag) {
 			return "Supervisor details deleted successfully";
 		}else {
