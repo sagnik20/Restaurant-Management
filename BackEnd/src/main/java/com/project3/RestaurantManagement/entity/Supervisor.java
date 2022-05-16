@@ -6,25 +6,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import lombok.Data;
-
 @Data
 @Entity
-public class HeadChef implements EntityInterface {
-	
+public class Supervisor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer cId;
+	private int sId;
+	
 	
 	@Column(nullable = false)
-	private String cEmail;
+	private String semail;
 	
 	@Column(nullable = false)
-	private String cPassword;
+	private String spassword;
 	
 	@Column(nullable = false)
-	private String cName;
+	private String sname;
 	
 	@Column(nullable = false)
-	private String cPhone;
-
+	private String sphone;
+	
 }
