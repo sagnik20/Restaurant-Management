@@ -8,12 +8,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.project3.RestaurantManagement.dao.AdminDao;
+import com.project3.RestaurantManagement.dao.CartDao;
+import com.project3.RestaurantManagement.dao.CustomerDao;
 import com.project3.RestaurantManagement.dao.HeadChefDao;
+import com.project3.RestaurantManagement.dao.ItemDao;
+import com.project3.RestaurantManagement.dao.OrderDao;
 import com.project3.RestaurantManagement.dao.SupervisorDao;
 import com.project3.RestaurantManagement.dto.LoginHelper;
 import com.project3.RestaurantManagement.entity.Admin;
+import com.project3.RestaurantManagement.entity.Customer;
 import com.project3.RestaurantManagement.entity.EntityInterface;
 import com.project3.RestaurantManagement.entity.HeadChef;
+import com.project3.RestaurantManagement.entity.Item;
 import com.project3.RestaurantManagement.entity.Supervisor;
 
 /**
@@ -27,11 +33,22 @@ public class RestaurantService implements RestaurantServiceInf {
 	
 	@Autowired
 	private AdminDao aDao;
-	@Autowired
-	private HeadChefDao hdao;
 	
 	@Autowired
-	private SupervisorDao sdao;
+	private HeadChefDao hDao;
+	
+	@Autowired
+	private SupervisorDao sDao;
+	
+	@Autowired
+	private CustomerDao cDao;
+	
+	@Autowired
+	private ItemDao iDao;
+	
+	private CartDao cartDao;
+	
+	private OrderDao oDao;
 
 	@Override
 	public EntityInterface LoginService(LoginHelper loginHelp) {
@@ -47,8 +64,8 @@ public class RestaurantService implements RestaurantServiceInf {
 
 			HeadChef hc = null;
 
-			if (hdao.verifyCredentials(loginHelp.getEmail(), loginHelp.getPassword()) > 0) 
-				hc = hdao.findByEmailAndPass(loginHelp.getEmail(), loginHelp.getPassword());
+			if (hDao.verifyCredentials(loginHelp.getEmail(), loginHelp.getPassword()) > 0) 
+				hc = hDao.findByEmailAndPass(loginHelp.getEmail(), loginHelp.getPassword());
 			
 			return hc;
 			
@@ -56,19 +73,23 @@ public class RestaurantService implements RestaurantServiceInf {
 		else if (loginHelp.getRole().equals("Supervisor")) {
 			Supervisor sv = null;
 
-			if (sdao.verifyCredentials(loginHelp.getEmail(), loginHelp.getPassword()) > 0) 
-				sv = sdao.findByEmailAndPass(loginHelp.getEmail(),loginHelp.getPassword());
+			if (sDao.verifyCredentials(loginHelp.getEmail(), loginHelp.getPassword()) > 0) 
+				sv = sDao.findByEmailAndPass(loginHelp.getEmail(),loginHelp.getPassword());
 			
 			return sv;
 
 		}
-		
-		return null;
+		else {
+			Customer customer =null;
+			if(cDao.verifyCredentials(loginHelp.getEmail(), loginHelp.getPassword())>0)
+				customer = cDao.findByEmailAndPass(loginHelp.getEmail(), loginHelp.getPassword());
+			return customer;
+		}
 	}
 	//HEAD CHEFF 
 	//adding chef
 	public boolean addChef(HeadChef chef) {
-		HeadChef hc = hdao.save(chef);
+		HeadChef hc = hDao.save(chef);
 		
 		if (hc != null) {
 			return true;
@@ -78,13 +99,13 @@ public class RestaurantService implements RestaurantServiceInf {
 	}
 	//list  chefs
 	public List<HeadChef> getChef() {
-		List<HeadChef> chefs = hdao.findAll();
+		List<HeadChef> chefs = hDao.findAll();
 		return chefs;
 	}
 	
 	//Deleting  chef
 	public boolean deleteChef(Integer cId) {
-		hdao.deleteById(cId);
+		hDao.deleteById(cId);
 		return true;
 	}
 	
@@ -93,7 +114,7 @@ public class RestaurantService implements RestaurantServiceInf {
 	
 	//Adding supervisor 
 	public boolean addSupervisor(Supervisor supervisor) {
-		Supervisor superVisor = sdao.save(supervisor);
+		Supervisor superVisor = sDao.save(supervisor);
 		if (superVisor != null) {
 			return true;
 		} else {
@@ -103,18 +124,33 @@ public class RestaurantService implements RestaurantServiceInf {
 	 
 	//list of supervisors
 	public List<Supervisor> getSupervisors() {
-		List<Supervisor> supervisors = sdao.findAll();
+		List<Supervisor> supervisors = sDao.findAll();
 		return supervisors;
 	}
 	
 	//deleting supervisor
 	public boolean deleteSupervisor(Integer sId) {
-		sdao.deleteById(sId);
+		sDao.deleteById(sId);
 		return true;
 	}
 	
+	//Item Add
+	public boolean additem(Item item) {
+		Item saveitem = iDao.save(item);
+		if(saveitem != null)
+			return true;
+		return false;
+	}
+	//get Item 
+	public List<Item> getItem() {
+		return iDao.findAll();
+	}
 	
+	//Delete Item
+	public boolean deleteItem(Item item) {
+		iDao.delete(item);
+		return true;
+	}
 	
-	
-	
+		
 }
