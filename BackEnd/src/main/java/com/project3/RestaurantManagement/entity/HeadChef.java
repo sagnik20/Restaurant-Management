@@ -7,6 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import lombok.Data;
 
+/**
+ * @author Sudarsan
+ * @author Runval
+ * 
+ */
+
+
 @Data
 @Entity
 public class HeadChef implements EntityInterface {

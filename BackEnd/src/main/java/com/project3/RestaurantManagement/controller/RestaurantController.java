@@ -18,8 +18,11 @@ import com.project3.RestaurantManagement.entity.Supervisor;
 import com.project3.RestaurantManagement.service.RestaurantServiceInf;
 
 /**
- * @author everyone
- *
+ * @author Sagnik
+ * @author Venkatesh
+ * @author Sudarsan
+ * @author Runval
+ * 
  */
 
 @RestController
