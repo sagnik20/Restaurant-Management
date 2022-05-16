@@ -25,7 +25,8 @@ import com.project3.RestaurantManagement.entity.Supervisor;
 /**
  * @author Sagnik 
  * @author Venkatesh
- *
+ * @author Sudarsan
+ * @author Runval
  */
 
 @Service
