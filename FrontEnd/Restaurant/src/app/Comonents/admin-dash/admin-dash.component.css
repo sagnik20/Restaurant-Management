@@ -101,7 +101,12 @@ h1, .h1 {
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     text-align: center;
 }
+.navbar-image {
+    height: 8vh;
+   
+    margin-top: 20px;
 
+}
 .dashboard {
     display: -webkit-box;
     display: -webkit-flex;
@@ -180,7 +185,7 @@ h1, .h1 {
 }
 
 .dashboard-nav {
-    background-color: #443ea2;
+    background-color: #f0ad4e;
 }
 
 .dashboard-nav a {
