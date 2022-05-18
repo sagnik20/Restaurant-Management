@@ -3,11 +3,17 @@
  */
 package com.project3.RestaurantManagement.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -55,8 +61,10 @@ public class RestaurantController {
 	}
 	
 	//Adding New Chef
-	@RequestMapping(path = "/addChef")
 	
+	@PostMapping("/addchef")
+	//@CrossOrigin()
+	@CrossOrigin(origins="http://localhost:4200")
 	public String addChef(@RequestBody HeadChef chef) {
 		boolean flag=service.addChef(chef);
 		if(flag){
@@ -66,13 +74,17 @@ public class RestaurantController {
 		}
 	}
 	//Getting chef details
-	@RequestMapping(path = "/getChef")
-	public List<HeadChef> getHeadChef(){
-		return service.getChef();
+	@GetMapping(path = "/getlistofchefs")
+	@CrossOrigin(origins="http://localhost:4200")
+	public List<HeadChef> getlistofchef(){
+		List<HeadChef> chefs= new ArrayList<HeadChef>();
+		chefs=service.getChef();
+		return chefs;
 	}
 	
 	//deleting chef
-	@RequestMapping(path="deleteChef")
+	@DeleteMapping(path="/deleteChef")
+	@CrossOrigin(origins="http://localhost:4200")
 	public String deleteChef(@RequestBody Integer cId) {
 		boolean flag=service.deleteChef(cId);
 		if(flag) {
