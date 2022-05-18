@@ -16,6 +16,7 @@ import lombok.Setter;
  */
 
 @Entity
+@Data
 @Getter
 @Setter
 public class HeadChef implements EntityInterface {

@@ -11,15 +11,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import lombok.Data;
+import lombok.Getter;
 
 /**
  * @author Sagnik 
  * @author Venkatesh
  *
  */
-
-@Data
 @Entity
+@Data
+
 public class Orders {
 	@Id
 	private Integer oId;
