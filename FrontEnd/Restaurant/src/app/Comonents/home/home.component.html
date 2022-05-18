@@ -7,14 +7,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="dropdown">
-            <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="btn-sm btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               Login
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li><button class="dropdown-item" type="button" (click)="loginadimn()"><i class="fas fa-users-cog m-2" ></i>Admin</button></li>
               <li><button class="dropdown-item" type="button" ><i class="fas fa-hands-helping m-2"></i>Supervisor</button></li>
-              <li><button class="dropdown-item" type="button" ><i class="fas fa-users m-2"></i> Customer</button></li>
+              <li><button class="dropdown-item" type="button" ><i class="fas fa-users m-2"></i> Chef</button></li>
             </ul>
           </div>
           
@@ -38,7 +38,23 @@
     <div class="text-center">
         <h1 class="banner-heading mb-3">Get Delicious Food Anytime</h1>
         <p class="banner-caption mb-4">Eat Smart & Healthy</p>
-        <button class="btn btn-warning" (click)="addchef()">customerRegister</button>
+        <!-- <button class="btn btn-warning " (click)="addchef()">Regester Now</button><br> -->
+        <!-- <button class="btn btn-warning mt-3">Login </button> -->
+        <div id="holder">
+        <div class="button"(click)="login()">
+            <p class="btnText mt-3" >Login</p>
+            <div class="btnTwo">
+              <p class="btnText2">GO!</p>
+            </div>
+         </div>
+        
+        <div class="button">
+            <p class="btnText mt-3">Regester</p>
+            <div class="btnTwo">
+              <p class="btnText2">Now</p>
+            </div>
+         </div>
+        </div>
         
         
         
