@@ -30,10 +30,11 @@ public class Orders {
 	
 	@OneToOne(cascade = CascadeType.ALL,targetEntity = Customer.class)
 	@JoinColumn(name="cId")
-	private String cemail;
+	private Customer customer;
 	
 	@Column(nullable = false)
 	private String paymentmode;
+	
 	@Column(nullable = false)
 	private int orderstatus;
 

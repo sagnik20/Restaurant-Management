@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project3.RestaurantManagement.dto.LoginHelper;
 import com.project3.RestaurantManagement.entity.Admin;
 import com.project3.RestaurantManagement.entity.HeadChef;
+import com.project3.RestaurantManagement.entity.Item;
+import com.project3.RestaurantManagement.entity.Orders;
 import com.project3.RestaurantManagement.entity.Supervisor;
 import com.project3.RestaurantManagement.service.RestaurantServiceInf;
 
@@ -131,4 +135,34 @@ public class RestaurantController {
 		else
 			return admin.getAName()+" couldn't be added. Error!";
 	}
+	
+/******************* Start OF KITCHEN-CHEF REST CONTROLLER ****************/
+	
+	@GetMapping("/getOrders")
+	public List<Orders> getAllOrders()
+	{
+		List<Orders> placedOrders = service.allOrders();
+		return placedOrders;
+	}
+	
+	@RequestMapping("/servedOrder/{oId}")
+	public void servedOrder(@PathVariable int oId)
+	{
+		service.served(oId);
+	}
+	
+	@GetMapping("/getAllItem")
+	public List<Item> getAllItems()
+	{
+		List<Item> allItems = service.getItem();
+		return allItems;	
+	}
+	
+	@RequestMapping("/modifyItemStatus/{iId}")
+	public void modifyItem(@PathVariable int iId)
+	{
+		service.modify(iId);
+	}
+	
+	/******************* End OF KITCHEN-CHEF REST CONTROLLER ****************/
 }
