@@ -29,8 +29,9 @@ public class Cart implements EntityInterface {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cartId;
 	
+	//@JoinColumn(name="cEmail")
 	@OneToOne(cascade = CascadeType.ALL,targetEntity = Customer.class)
-	@JoinColumn(name="cEmail")
+	@JoinColumn(name="cId")
 	private Customer customer;
 	
 	@OneToOne(cascade = CascadeType.ALL,targetEntity = Item.class)
