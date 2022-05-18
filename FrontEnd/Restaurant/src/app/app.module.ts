@@ -16,6 +16,8 @@ import { LoginComponent } from './Comonents/login/login.component';
 import { AdminloginComponent } from './Comonents/adminlogin/adminlogin.component';
 import { ChefloginComponent } from './Comonents/cheflogin/cheflogin.component';
 import { ChefDashComponent } from './Comonents/chef-dash/chef-dash.component';
+import { ViewOrdersComponent } from './Comonents/view-orders/view-orders.component';
+import { ViewItemsComponent } from './Comonents/view-items/view-items.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ChefDashComponent } from './Comonents/chef-dash/chef-dash.component';
     
     AdminloginComponent,
     ChefloginComponent,
-    ChefDashComponent
+    ChefDashComponent,
+    ViewOrdersComponent,
+    ViewItemsComponent
   ],
   imports: [
     BrowserModule,

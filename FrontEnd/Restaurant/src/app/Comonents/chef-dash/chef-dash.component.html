@@ -1,1 +1,35 @@
-<p>chef-dash works!</p>
+<div class='dashboard'>
+
+    <div class="dashboard-nav">
+        <header>
+            <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+
+            <a href="#" class="brand-logo"><i class="fa-solid fa-fork-knife"></i> <span>FOODMUNCH</span></a>
+        </header>
+        <nav class="dashboard-nav-list">
+
+            <a class="dashboard-nav-item" href="" routerLink="/viewOrders"><i class="fa-solid fa-user-chef"></i> Orders </a>
+            <a class="dashboard-nav-item" href="" routerLink="/viewItems"><i class="fa-solid fa-plate-utensils"></i> Items </a>
+            <!-- <a href="#" class="dashboard-nav-item"><i class="fa-solid fa-user-large"></i> Customer </a> -->
+
+
+            <div class="nav-item-divider"></div>
+            <button class="btn btn-outline-light" (click)="returnhome()"><i class="fas fa-sign-out-alt"></i> Logout </button>
+        </nav>
+
+    </div>
+    <div class='dashboard-app'>
+        <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+        <div class='dashboard-content'>
+            <div class='container'>
+                <div class='card'>
+                    <div class='card-header'>
+                        <h1>Welcome to Chef portal</h1>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
