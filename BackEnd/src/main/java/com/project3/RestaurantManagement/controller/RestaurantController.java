@@ -79,7 +79,7 @@ public class RestaurantController {
 	}
 	//Getting chef details
 	@GetMapping(path = "/getlistofchefs")
-	@CrossOrigin(origins="http://localhost:4200")
+	//@CrossOrigin(origins="http://localhost:4200")
 	public List<HeadChef> getlistofchef(){
 		List<HeadChef> chefs= new ArrayList<HeadChef>();
 		chefs=service.getChef();
