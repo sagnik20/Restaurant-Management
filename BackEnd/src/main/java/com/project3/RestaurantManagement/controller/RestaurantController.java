@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project3.RestaurantManagement.dto.LoginHelper;
 import com.project3.RestaurantManagement.entity.Admin;
 import com.project3.RestaurantManagement.entity.HeadChef;
+import com.project3.RestaurantManagement.entity.Item;
+import com.project3.RestaurantManagement.entity.Orders;
 import com.project3.RestaurantManagement.entity.Supervisor;
 import com.project3.RestaurantManagement.service.RestaurantServiceInf;
 
@@ -68,7 +72,7 @@ public class RestaurantController {
 	public String addChef(@RequestBody HeadChef chef) {
 		boolean flag=service.addChef(chef);
 		if(flag){
-			return "Chef Added Successfully";
+			return "New Chef "+ chef.getCName()+" Added Successfully";
 		}else {
 			return "An error occured while saving the Chef details";
 		}
@@ -96,24 +100,24 @@ public class RestaurantController {
 	
 	//Supervisor 
 	//Adding Supervisor
-	@RequestMapping(path = "addSupervisor")
+	@RequestMapping(path = "/addSupervisor")
 	public String addSupervisor(@RequestBody Supervisor supervisor) {
 		boolean flag=service.addSupervisor(supervisor);
 		if(flag){
-			return "Supervisor Added Successfully";
+			return "New Supervisor "+ supervisor.getSName() +" Added Successfully";
 		}else {
 			return "An error occured while saving the supervisor details";
 		}
 	}
 	//getting supervisor
-	@RequestMapping(path = "getSupervisors")
+	@RequestMapping(path = "/getSupervisors")
 	public List<Supervisor> getSuperviors(){
 		return service.getSupervisors();
 	}
 	
 	
 	//Deleting Supervisor
-	@RequestMapping(path = "deleteSupervisor")
+	@RequestMapping(path = "/deleteSupervisor")
 	public String deleteSupervisor(@RequestBody Integer sId) {
 		boolean flag=service.deleteSupervisor(sId);
 		if(flag) {
@@ -122,4 +126,43 @@ public class RestaurantController {
 			return "Error while deleting Supervisor details";
 		}
 	}
+	
+	@PostMapping("/addAdmin")
+	public String addAdmin(@RequestBody Admin admin) {
+		boolean flag = service.addAdmin(admin);
+		if(flag)
+			return "New Admin "+ admin.getAName() + " added successfully";
+		else
+			return admin.getAName()+" couldn't be added. Error!";
+	}
+	
+/******************* Start OF KITCHEN-CHEF REST CONTROLLER ****************/
+	
+	@GetMapping("/getOrders")
+	public List<Orders> getAllOrders()
+	{
+		List<Orders> placedOrders = service.allOrders();
+		return placedOrders;
+	}
+	
+	@RequestMapping("/servedOrder/{oId}")
+	public void servedOrder(@PathVariable int oId)
+	{
+		service.served(oId);
+	}
+	
+	@GetMapping("/getAllItem")
+	public List<Item> getAllItems()
+	{
+		List<Item> allItems = service.getItem();
+		return allItems;	
+	}
+	
+	@RequestMapping("/modifyItemStatus/{iId}")
+	public void modifyItem(@PathVariable int iId)
+	{
+		service.modify(iId);
+	}
+	
+	/******************* End OF KITCHEN-CHEF REST CONTROLLER ****************/
 }

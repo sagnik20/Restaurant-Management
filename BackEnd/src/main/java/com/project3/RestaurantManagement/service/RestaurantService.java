@@ -4,6 +4,7 @@
 package com.project3.RestaurantManagement.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ import com.project3.RestaurantManagement.entity.Customer;
 import com.project3.RestaurantManagement.entity.EntityInterface;
 import com.project3.RestaurantManagement.entity.HeadChef;
 import com.project3.RestaurantManagement.entity.Item;
+import com.project3.RestaurantManagement.entity.Orders;
 import com.project3.RestaurantManagement.entity.Supervisor;
 
 /**
@@ -47,8 +49,10 @@ public class RestaurantService implements RestaurantServiceInf {
 	@Autowired
 	private ItemDao iDao;
 	
+	@Autowired
 	private CartDao cartDao;
 	
+	@Autowired
 	private OrderDao oDao;
 
 	@Override
@@ -153,5 +157,32 @@ public class RestaurantService implements RestaurantServiceInf {
 		return true;
 	}
 	
+	public boolean addAdmin(Admin admin) {
+		Admin saveAdm = aDao.save(admin);
+		if(saveAdm!=null)
+			return true;
+		return false;
+	}
+	
+	//Getting All Orders Which Placed By Customer
+		@Override
+		public List<Orders> allOrders() {
+			return oDao.findAll();
+		}
+		
+		//Orders served delivered to customer
+		@Override
+		public void served(int oId) {
+			Optional<Orders> getOrder = oDao.findById(oId);
+			getOrder.get().setOrderstatus(0);	
+			oDao.save(getOrder.get());
+		}
+		
+		@Override
+		public void modify(int iId) {
+			Optional<Item> getItem = iDao.findById(iId);
+			getItem.get().setStatus(false);
+			iDao.save(getItem.get());
+		}
 		
 }

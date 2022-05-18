@@ -3,11 +3,13 @@
  */
 package com.project3.RestaurantManagement.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 
 import lombok.Data;
 
@@ -27,12 +29,22 @@ public class Item {
 	
 	@Column(nullable = false)
 	private String iName;
+	
 	@Column(nullable = false)
 	private String iDesc;
+	
 	@Column(nullable = false)
-	private String iCost;
+	private float iCost;
+	
 	@Column(nullable = false)
 	private int icount;
+	
+	//For checking item is Available or not
+	@Column(nullable=false)
+	private Boolean status;
+	
+//	@ManyToOne(cascade = CascadeType.ALL,targetEntity = Customer.class)
+//	private Customer customer;
 	
 //	@Lob
 //	private byte[] picByte;
