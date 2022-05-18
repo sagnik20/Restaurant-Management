@@ -68,7 +68,7 @@ public class RestaurantController {
 	public String addChef(@RequestBody HeadChef chef) {
 		boolean flag=service.addChef(chef);
 		if(flag){
-			return "Chef Added Successfully";
+			return "New Chef "+ chef.getCName()+" Added Successfully";
 		}else {
 			return "An error occured while saving the Chef details";
 		}
@@ -96,24 +96,24 @@ public class RestaurantController {
 	
 	//Supervisor 
 	//Adding Supervisor
-	@RequestMapping(path = "addSupervisor")
+	@RequestMapping(path = "/addSupervisor")
 	public String addSupervisor(@RequestBody Supervisor supervisor) {
 		boolean flag=service.addSupervisor(supervisor);
 		if(flag){
-			return "Supervisor Added Successfully";
+			return "New Supervisor "+ supervisor.getSName() +" Added Successfully";
 		}else {
 			return "An error occured while saving the supervisor details";
 		}
 	}
 	//getting supervisor
-	@RequestMapping(path = "getSupervisors")
+	@RequestMapping(path = "/getSupervisors")
 	public List<Supervisor> getSuperviors(){
 		return service.getSupervisors();
 	}
 	
 	
 	//Deleting Supervisor
-	@RequestMapping(path = "deleteSupervisor")
+	@RequestMapping(path = "/deleteSupervisor")
 	public String deleteSupervisor(@RequestBody Integer sId) {
 		boolean flag=service.deleteSupervisor(sId);
 		if(flag) {
@@ -121,5 +121,14 @@ public class RestaurantController {
 		}else {
 			return "Error while deleting Supervisor details";
 		}
+	}
+	
+	@PostMapping("/addAdmin")
+	public String addAdmin(@RequestBody Admin admin) {
+		boolean flag = service.addAdmin(admin);
+		if(flag)
+			return "New Admin "+ admin.getAName() + " added successfully";
+		else
+			return admin.getAName()+" couldn't be added. Error!";
 	}
 }

@@ -153,5 +153,11 @@ public class RestaurantService implements RestaurantServiceInf {
 		return true;
 	}
 	
+	public boolean addAdmin(Admin admin) {
+		Admin saveAdm = aDao.save(admin);
+		if(saveAdm!=null)
+			return true;
+		return false;
+	}
 		
 }
