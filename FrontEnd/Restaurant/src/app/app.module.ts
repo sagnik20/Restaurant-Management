@@ -13,6 +13,10 @@ import { IteamlistComponent } from './Comonents/iteamlist/iteamlist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './Comonents/login/login.component';
 
+import { AdminloginComponent } from './Comonents/adminlogin/adminlogin.component';
+import { ChefloginComponent } from './Comonents/cheflogin/cheflogin.component';
+import { ChefDashComponent } from './Comonents/chef-dash/chef-dash.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,11 @@ import { LoginComponent } from './Comonents/login/login.component';
     AdminDashComponent,
     ListOfChefComponent,
     IteamlistComponent,
-    LoginComponent
+    LoginComponent,
+    
+    AdminloginComponent,
+    ChefloginComponent,
+    ChefDashComponent
   ],
   imports: [
     BrowserModule,
