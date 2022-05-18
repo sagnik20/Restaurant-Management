@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddChefComponent } from './Comonents/add-chef/add-chef.component';
 import { AdminDashComponent } from './Comonents/admin-dash/admin-dash.component';
+import { AdminloginComponent } from './Comonents/adminlogin/adminlogin.component';
+import { ChefDashComponent } from './Comonents/chef-dash/chef-dash.component';
+import { ChefloginComponent } from './Comonents/cheflogin/cheflogin.component';
 import { HomeComponent } from './Comonents/home/home.component';
 import { ListOfChefComponent } from './Comonents/list-of-chef/list-of-chef.component';
 import { LoginComponent } from './Comonents/login/login.component';
+
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -12,7 +16,10 @@ const routes: Routes = [
   {path:"admin-dash",component:AdminDashComponent},
   {path:"list-of-chef",component:ListOfChefComponent},
   {path:"home",component:HomeComponent},
-  {path:"login",component:LoginComponent}
+  {path:"login",component:LoginComponent},
+  {path:"chef-dash",component:ChefDashComponent},
+  {path:"adminlogin",component:AdminloginComponent},
+  {path:"cheflogin",component:ChefloginComponent}
  
 ];
 

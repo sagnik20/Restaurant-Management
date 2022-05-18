@@ -2,6 +2,9 @@
     width: 80px;
     height: 70px;
 }
+a:link{
+  text-decoration: none;
+}
 
 #navItem1 {
     color: #323f4b;

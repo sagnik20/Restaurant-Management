@@ -16,9 +16,14 @@ export class HomeComponent implements OnInit {
     this.route.navigate(['/add-chef'])
   }
   loginadimn(){
-    this.route.navigate(['/admin-dash'])
+    this.route.navigate(['/adminlogin'])
   }
+
   login(){
     this.route.navigate(['/login'])
+  }
+  loginchef(){
+     this.route.navigate(['/cheflogin'])
+
   }
 }
