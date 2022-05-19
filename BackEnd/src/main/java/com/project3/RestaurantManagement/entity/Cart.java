@@ -20,8 +20,8 @@ import lombok.Data;
  *
  */
 
-@Data
 @Entity
+@Data
 
 public class Cart implements EntityInterface {
 	

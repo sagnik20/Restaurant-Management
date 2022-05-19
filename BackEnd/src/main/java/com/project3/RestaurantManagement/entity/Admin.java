@@ -17,10 +17,10 @@ import lombok.NoArgsConstructor;
  *
  */
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Table
 public class Admin implements EntityInterface {
 
