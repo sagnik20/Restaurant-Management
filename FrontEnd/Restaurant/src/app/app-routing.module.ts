@@ -8,6 +8,8 @@ import { ChefloginComponent } from './Comonents/cheflogin/cheflogin.component';
 import { HomeComponent } from './Comonents/home/home.component';
 import { ListOfChefComponent } from './Comonents/list-of-chef/list-of-chef.component';
 import { LoginComponent } from './Comonents/login/login.component';
+import { ViewItemsComponent } from './Comonents/view-items/view-items.component';
+import { ViewOrdersComponent } from './Comonents/view-orders/view-orders.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,10 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"chef-dash",component:ChefDashComponent},
   {path:"adminlogin",component:AdminloginComponent},
-  {path:"cheflogin",component:ChefloginComponent}
+  {path:"cheflogin",component:ChefloginComponent},
+  {path:"viewItems",component:ViewItemsComponent},
+  {path:"viewOrders",component:ViewOrdersComponent},
+
  
 ];
 

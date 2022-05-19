@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cheflogin',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChefloginComponent implements OnInit {
 
-  constructor() { }
+  constructor( private route:Router) { }
 
   ngOnInit(): void {
+  }
+  chefDash(){
+    this.route.navigate(['/chef-dash'])
+
   }
 
 }
