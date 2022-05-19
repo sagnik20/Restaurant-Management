@@ -18,4 +18,7 @@ returnhome(){
 listofchef(){
   this.route.navigate(['/list-of-chef'])
 }
+listofitems(){
+  this.route.navigate(['/viewItems'])
+}
 }

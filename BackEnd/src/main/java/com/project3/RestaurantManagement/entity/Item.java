@@ -18,9 +18,8 @@ import lombok.Data;
  * @author Venkatesh
  *
  */
-
-@Data
 @Entity
+@Data
 public class Item {
 
 	@Id

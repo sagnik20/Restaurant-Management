@@ -140,14 +140,21 @@ h1,
     -ms-flex-positive: 2;
     flex-grow: 2;
     margin-top: 84px;
+    background: url("ttps://assets.airmail.news/static/images/BAh7CEkiCGdpZAY6BkVUSSIzZ2lkOi8vYWlyLW1haWwvQXJ0aWNsZTo6UGhvdG8vNTYwMjE_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiDGRlZmF1bHQGOwBUSSIPZXhwaXJlc19hdAY7AFQw--258d1722acc6e3d497fd98b1d3165dde88e77c76/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2QzNKbGMybDZaVWtpQ1RneU1ENEdPd1pVT2hCaGRYUnZYMjl5YVdWdWRGUTZESEYxWVd4cGRIbHBhUT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--9f1042b9c088c6ba97f7b06fd8c724bd4cf39745/photo-1632924217.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
+.salt-bahi{
+    height: 100vh;
+    width: 200vh;
+}
 .dashboard-content {
     -webkit-box-flex: 2;
     -webkit-flex-grow: 2;
     -ms-flex-positive: 2;
     flex-grow: 2;
     padding: 25px;
+    background: url();
 }
 
 .dashboard-nav {
@@ -243,6 +250,8 @@ h1,
 }
 
 .dashboard-nav-item {
+    color: white;
+    font-size: 19px;
     min-height: 56px;
     padding: 8px 20px 8px 70px;
     display: -webkit-box;

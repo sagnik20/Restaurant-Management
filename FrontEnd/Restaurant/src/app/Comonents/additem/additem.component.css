@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+.employee-container {
+    background-color:#f0ad4e ;
+    height: 150vh;
+    
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+
+
+
+.navbar-image {
+    height: 8vh;
+    margin-left: 40px;
+    margin-top: 20px;
+
+}
+.form-name {
+    color : #f0ad4e;
+    
+    
+    font-family: roboto;
+    font-weight: bold;
+    
+
+}
+.a_form-name{
+    color :#ff8000;
+    
+    
+    font-family: roboto;
+    font-weight: bold;
+    
+
+}
+
+.details-card {
+
+
+    background-color: white;
+    
+    padding: 20px;
+    height: 820px;
+    width: 600px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 20px;
+    
+    
+    
+
+}
+.details-card-chef {
+
+
+    background-color: white;
+    
+    padding: 20px;
+    height: 600px;
+    width: 600px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 20px;
+    
+    
+    
+
+}
+
+
+.card {
+    margin-top: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 800px;
+    border-width: 0px;
+}
+.card_chef {
+    margin-top: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 680px;
+    border-width: 0px;
+    
+
+}
+
+
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    border-width: 0px;
+
+
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+    background-color:  #ff9933;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+.sec-container {
+        background-color: #595959;
+        height: 700px;
+    
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px ;
+        flex-wrap: wrap;
+    }
+    
+    
+    
+    
+    .select-container{
+        margin-top: 30px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 10px 10px 5px  #595959 ;
+        height: 400px;
+        width: 400px;
+        
+    }
+    .Button-admin{
+        padding: 8px;
+        height: 44px;
+        width: 140px;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        background-color:  #ff9933;
+        color: white;
+        border-width: 0px;
+        font-family: Roboto;
+        font-weight: bold;
+    
+    }
+    
