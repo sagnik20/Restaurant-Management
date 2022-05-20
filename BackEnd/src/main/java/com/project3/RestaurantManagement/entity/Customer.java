@@ -19,9 +19,9 @@ import lombok.Data;
  * @author Sagnik & Venkatesh
  *
  */
-
-@Data
 @Entity
+@Data
+
 public class Customer implements EntityInterface {
 	
 	@Id

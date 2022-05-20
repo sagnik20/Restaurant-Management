@@ -14,8 +14,9 @@ import lombok.Data;
  *
  */
 
-@Data
 @Entity
+@Data
+
 public class Supervisor implements EntityInterface{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

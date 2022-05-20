@@ -20,6 +20,10 @@ import lombok.Data;
  */
 @Entity
 @Data
+<<<<<<< HEAD
+=======
+
+>>>>>>> c52356184400b2ff312aeaa57a727533587c3d28
 public class Item {
 
 	@Id

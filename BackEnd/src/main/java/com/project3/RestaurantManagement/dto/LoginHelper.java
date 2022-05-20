@@ -17,6 +17,7 @@ public class LoginHelper {
 	private String email;
 	private String password;
 	private String role;
+	
 	public String getEmail() {
 		return email;
 	}
