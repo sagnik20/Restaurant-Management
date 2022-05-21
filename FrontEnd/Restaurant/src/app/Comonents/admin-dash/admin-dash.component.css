@@ -138,8 +138,8 @@ h1, .h1 {
     -ms-flex-positive: 2;
     flex-grow: 2;
     padding: 25px;
+   
 }
-
 .dashboard-nav {
     min-width: 238px;
     position: fixed;
@@ -231,6 +231,8 @@ h1, .h1 {
 }
 
 .dashboard-nav-item {
+    color: white;
+    font-size: 19px;
     min-height: 56px;
     padding: 8px 20px 8px 70px;
     display: -webkit-box;

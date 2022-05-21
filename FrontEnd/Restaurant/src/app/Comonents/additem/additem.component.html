@@ -8,23 +8,23 @@
         <h1 class="form-name">      Chef Registration Form    </h1>
         <div class="details-card-chef ">
             <div class="card_chef  ">
-                <form #addchef="" (ngSubmit) ="addchefform()">
+                <form >
                   
                     <div class="container">
 
-                        <label for="cEmail"><b>Chef Email</b></label>
+                        <label for="cEmail"><b>Iteam Id</b></label>
                         <input type="email" placeholder="Enter Chef Email" id="email"  required name="cEmail">
 
-                        <label for="cPassword"><b>Chef Password</b></label>
+                        <label for="cPassword"><b>Item Name</b></label>
                         <input type="password" placeholder="Enter Chef password " id="pass"  required>
 
-                        <label for="cName"><b>Chef Name</b></label>
+                        <label for="cName"><b>Item description</b></label>
                         <input type="text" placeholder="Enter chef " id="name" required>
 
-                        <label for="cPhone"><b>Chefd Phone</b></label>
+                        <label for="cPhone"><b>Item Cost</b></label>
                         <input type="tel" placeholder="Enter Chef Phone no" id="phone" required>
 
-                        <button type="submit" class="btn btn-warning" (click)="addnewchef()">Register</button>
+                        <button type="submit" class="btn btn-warning" (click)="addnewitem()">Add Item</button>
                     </div>
                 </form>
             </div>

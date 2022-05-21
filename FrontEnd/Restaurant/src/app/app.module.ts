@@ -18,6 +18,9 @@ import { ChefloginComponent } from './Comonents/cheflogin/cheflogin.component';
 import { ChefDashComponent } from './Comonents/chef-dash/chef-dash.component';
 import { ViewOrdersComponent } from './Comonents/view-orders/view-orders.component';
 import { ViewItemsComponent } from './Comonents/view-items/view-items.component';
+import { AdditemComponent } from './Comonents/additem/additem.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,12 +31,15 @@ import { ViewItemsComponent } from './Comonents/view-items/view-items.component'
     ListOfChefComponent,
     IteamlistComponent,
     LoginComponent,
-    
+  
     AdminloginComponent,
     ChefloginComponent,
     ChefDashComponent,
     ViewOrdersComponent,
-    ViewItemsComponent
+    ViewItemsComponent,
+    AdditemComponent,
+   
+
   ],
   imports: [
     BrowserModule,

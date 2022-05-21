@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddChefComponent } from './Comonents/add-chef/add-chef.component';
+import { AdditemComponent } from './Comonents/additem/additem.component';
 import { AdminDashComponent } from './Comonents/admin-dash/admin-dash.component';
 import { AdminloginComponent } from './Comonents/adminlogin/adminlogin.component';
 import { ChefDashComponent } from './Comonents/chef-dash/chef-dash.component';
@@ -24,6 +25,8 @@ const routes: Routes = [
   {path:"cheflogin",component:ChefloginComponent},
   {path:"viewItems",component:ViewItemsComponent},
   {path:"viewOrders",component:ViewOrdersComponent},
+  {path:"additem",component:AdditemComponent}
+  
 
  
 ];

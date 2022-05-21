@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
@@ -8,13 +10,18 @@ import { ServiceService } from 'src/app/service/service.service';
 })
 export class ListOfChefComponent implements OnInit {
 
-  constructor(private service:ServiceService) { }
+  constructor(private service:ServiceService,private http:HttpClient,private route:Router) { }
 
+  chefs :any;
   ngOnInit() {
+    let response=this.http.get("http://localhost:8081/getlistofchefs");
+    response.subscribe((data)=>this.chefs=data)
+      
+    
+  }
+  addcheff(){
+    this.route.navigate(['/add-chef'])
 
-    this.service.listOfChefs().subscribe(
-      data=>console.log("response done")
-    )
   }
 
 }
