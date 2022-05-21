@@ -20,8 +20,10 @@
 </head>
 
 <div class="p-4">
-  <h2>Chef Table</h2>
-
+  <div class="d-flex flex-row justify-content-between">
+    <h2>Chef Table</h2>
+    <button class="btn btn-success m-3" (click)="addcheff()">Add chef</button>
+</div>
   <table>
     <tr>
       <th>Chef Id</th>
@@ -30,7 +32,15 @@
       <th>Chef Name</th>
       <th>Chef Phone</th>
     </tr>
+    <tr *ngFor= "let chef of chefs">
+      <td> {{chef.cid}} </td>
+      <td>{{chef.cemail}}</td>
+      <td>{{chef.cpassword}}</td>
+      <td>{{chef.cname}}</td>  
+      <td>{{chef.cphone}}</td>
+    </tr>
   </table>
+  
 </div>
 
 

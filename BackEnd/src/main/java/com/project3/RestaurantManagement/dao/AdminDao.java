@@ -12,7 +12,7 @@ import com.project3.RestaurantManagement.entity.Admin;
  * @author sagnik
  *
  */
-public interface AdminDao extends JpaRepository<Admin, String>{
+public interface AdminDao extends JpaRepository<Admin, Integer>{
 
 	@Query(value = "select count(*) from Admin a where a.a_email = ?1 and a.a_password = ?2", nativeQuery = true)
 	int verifyCredentials(String email,String password);

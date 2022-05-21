@@ -36,6 +36,7 @@ import com.project3.RestaurantManagement.service.RestaurantServiceInf;
  */
 
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 public class RestaurantController {
 
 	@Autowired
@@ -79,7 +80,7 @@ public class RestaurantController {
 	}
 	//Getting chef details
 	@GetMapping(path = "/getlistofchefs")
-	//@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://localhost:4200")
 	public List<HeadChef> getlistofchef(){
 		List<HeadChef> chefs= new ArrayList<HeadChef>();
 		chefs=service.getChef();
@@ -139,6 +140,7 @@ public class RestaurantController {
 /******************* Start OF KITCHEN-CHEF REST CONTROLLER ****************/
 	
 	@GetMapping("/getOrders")
+	
 	public List<Orders> getAllOrders()
 	{
 		List<Orders> placedOrders = service.allOrders();
@@ -152,6 +154,7 @@ public class RestaurantController {
 	}
 	
 	@GetMapping("/getAllItem")
+	@CrossOrigin(origins="http://localhost:4200")
 	public List<Item> getAllItems()
 	{
 		List<Item> allItems = service.getItem();
